@@ -19,7 +19,6 @@ const Todo = ({ todo, eliminarTodo, onCompleted }) => {
       padding="5"
       borderRadius="xl"
       gap="10"
-      border="1px solid red"
     >
       <Text
         display="flex"
@@ -34,7 +33,6 @@ const Todo = ({ todo, eliminarTodo, onCompleted }) => {
           md: "65%",
           lg: "70%",
         }}
-        border="1px solid blue"
       >
         📒{task}
       </Text>
@@ -42,7 +40,7 @@ const Todo = ({ todo, eliminarTodo, onCompleted }) => {
       <Flex
         minWidth="max-content"
         width={{ base: "100%", sm: "50%", md: "10%" }}
-        border="1px solid red"
+        
         justify="center"
         alignItems="center"
         gap={["2", "10"]}
