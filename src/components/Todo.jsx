@@ -23,7 +23,7 @@ const Todo = ({ todo, eliminarTodo, onCompleted }) => {
       <Text textTransform="capitalize" textDecoration={completed ? "line-through" : "none"} width="100%">
         {task}
       </Text>
-      <Button colorScheme="facebook" onClick={() => eliminarTodo(id)}>
+      <Button colorScheme="facebook" onClick={() => eliminarTodo(id,task)}>
         X
       </Button>
     </Box>
