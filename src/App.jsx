@@ -14,7 +14,7 @@ function App() {
         height="100vh"
         width="100%"
       >
-        <Text>TODO APP</Text>
+        <Text mb="10" fontSize="2xl" fontFamily="mono">TODO APP</Text>
         <TodoList />
       </Box>
     </>

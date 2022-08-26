@@ -1,4 +1,4 @@
-import { Button, Input } from "@chakra-ui/react";
+import { Box, Button, Input } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
@@ -37,17 +37,28 @@ const TodoForm = ({ agregarTodo }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Input
-          width="100%"
-          name="task"
-          type="text"
-          value={todo.task}
-          onChange={handleTaskInputChange}
-          placeholder="ingresar tarea"
-        />
-        <Button width="100%" type="submit" colorScheme="facebook">
-          agregar
-        </Button>
+        <Box display="grid" placeItems="center">
+          
+          <Input
+            display="grid"
+            placeItems="center"
+            width="100%"
+            name="task"
+            type="text"
+            value={todo.task}
+            onChange={handleTaskInputChange}
+            placeholder="ingresar tarea"
+          />
+          <Button
+            mt="5"
+            width="100%"
+            textAlign="center"
+            type="submit"
+            colorScheme="facebook"
+          >
+            agregar
+          </Button>
+        </Box>
       </form>
     </>
   );

@@ -1,13 +1,9 @@
-import {
-  Box,
-  Button,
-  Editable,
-  EditableInput,
-  EditablePreview,
-} from "@chakra-ui/react";
+import { Box, Button, Checkbox, Text } from "@chakra-ui/react";
 import React from "react";
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo, eliminarTodo, onCompleted }) => {
+  const { task, id, completed } = todo;
+
   return (
     <Box
       display="flex"
@@ -21,14 +17,15 @@ const Todo = ({ todo }) => {
       padding="5"
       borderRadius="xl"
       gap="10"
-      
     >
-      <Editable defaultValue={todo.task} width="100%" >
-        <EditablePreview width="100%" padding="5" />
-        <EditableInput width="100%" padding="5" />
-      </Editable>
-      <Button colorScheme="facebook">✔</Button>
-      <Button colorScheme="facebook">X</Button>
+      <Checkbox type="checkbox" checked={completed} onChange={() => onCompleted(id)} />
+
+      <Text textTransform="capitalize" textDecoration={completed ? "line-through" : "none"} width="100%">
+        {task}
+      </Text>
+      <Button colorScheme="facebook" onClick={() => eliminarTodo(id)}>
+        X
+      </Button>
     </Box>
   );
 };
