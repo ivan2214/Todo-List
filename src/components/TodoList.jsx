@@ -34,9 +34,10 @@ const TodoList = () => {
 
     if (isDeleted) {
       var newTask = todos.filter((item) => item.id !== id);
+      setTodos(newTask);
     }
+    
 
-    setTodos(newTask);
   };
 
   //tarea completada
